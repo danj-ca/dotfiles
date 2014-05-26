@@ -15,8 +15,18 @@ call vundle#begin()
 " Get to Vundlin
 Plugin 'gmarik/Vundle.vim'
 
-" Load other plugins here... we'll start with Solarized, naturally
-Plugin 'altercation/vim-colors-solarized'
+" Load other plugins here...
+Plugin 'altercation/vim-colors-solarized' " Colour me solarized
+
+Plugin 'rizzatti/dash.vim' " Dash integration
+
+Plugin 'scrooloose/syntastic' " Syntax checkin'
+
+Plugin 'bling/vim-airline' " Make the statusline awesome
+
+Plugin 'kien/ctrlp.vim' " Fuzzy matching
+
+Plugin 'ervandew/supertab' " Perform completions with <Tab>
 
 call vundle#end()
 filetype plugin indent on " This causes Vim to load the plugin file and indent file for filetypes
@@ -29,6 +39,11 @@ set background=dark " Change to dark in order to... well, do the obvious
 colorscheme solarized
 " }}}
 
+" Typography {{{
+" Use patched Powerline version of Source Code Pro font from https://github.com/Lokaltog/powerline-fonts
+set guifont=Source\ Code\ Pro\ for\ Powerline:h15
+" }}}
+"
 " Space, the Final Frontier {{{
 set tabstop=4     " This is how many visual spaces Vim will use to show a TAB char
 set softtabstop=4 " This is how many spaces actually get added/removed when you type/delete a TAB char
@@ -45,6 +60,12 @@ set cursorline " Highlight the current line
 set wildmenu   " Turn on visual autocomplete for the command menu
 set showmatch  " Highlight matching [{()}]
 set ruler      " Display cursor position in statusline/at bottom of buffer. Customizable with rulerformat 
+" }}}
+
+" Statusline {{{
+set laststatus=2                           " Always show the statusline
+let g:airline_powerline_fonts=1            " Use glyphs from patched powerline font
+let g:airline#extensions#tabline#enabled=1 " Display buffers in the tabline
 " }}}
 
 " Searching {{{
