@@ -16,7 +16,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Load other plugins here...
-Plugin 'altercation/vim-colors-solarized' " Colour me solarized
+"Plugin 'altercation/vim-colors-solarized' " Colour me solarized
+
+Plugin 'chriskempson/base16-vim' " base16 colours
 
 Plugin 'rizzatti/dash.vim' " Dash integration
 
@@ -30,19 +32,23 @@ Plugin 'kien/ctrlp.vim' " Fuzzy matching
 
 Plugin 'ervandew/supertab' " Perform completions with <Tab>
 
+Plugin 'Valloric/YouCompleteMe' " Even better completions, but compiled component required
+
 Plugin 'majutsushi/tagbar' " Class outliner - make vim a little more IDE-like
+
+Plugin 'joonty/vdebug' " Debugger client for DBGp-conforming debuggers
 
 " WordPress.vim Dependencies
 
-Plugin 'StanAngeloff/php.vim' " Improved PHP syntax highlighting
+Plugin 'StanAngeloff/php.vim'       " Improved PHP syntax highlighting
 
 Plugin 'shawncplus/phpcomplete.vim' " Improved PHP autocompletion
 
-Plugin 'SirVer/ultisnips' " Support for code snippets
+Plugin 'SirVer/ultisnips'           " Support for code snippets
 
-Plugin 'honza/vim-snippets' " You like snippets, do you? Have all the snippet IN THE WORLD!
+Plugin 'honza/vim-snippets'         " You like snippets, do you? Have all the snippets IN THE WORLD!
 
-Plugin 'dsawardekar/wordpress.vim' " Awesome features for WordPress dev
+Plugin 'dsawardekar/wordpress.vim'  " Awesome features for WordPress dev
 
 call vundle#end()
 " We Vundled like it's going out of style
@@ -52,12 +58,13 @@ call vundle#end()
 filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting all of which add nice extra features to whatever language you're using
 syntax enable
 set background=dark " Change to dark in order to... well, do the obvious
-colorscheme solarized
+"colorscheme solarized
+colorscheme base16-tomorrow
 " }}}
 
 " Typography {{{
 " Use patched Powerline version of Source Code Pro font from https://github.com/Lokaltog/powerline-fonts
-set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h15
 " }}}
 "
 " Space, the Final Frontier {{{
@@ -77,6 +84,7 @@ set wildmenu          " Turn on visual autocomplete for the command menu
 set showmatch         " Highlight matching [{()}]
 set foldmethod=syntax " By default, allow folding on language constructs
 set ruler             " Display cursor position in statusline/at bottom of buffer. Customizable with rulerformat
+set visualbell        " Stop beeping at me
 " }}}
 
 " Statusline {{{
@@ -103,8 +111,8 @@ noremap <silent> <leader>l :TagbarToggle<CR>
 " Syntax Config {{{
 " TODO May wish to break syntax-specific config out into ftplugins, if this gets bloated
 let php_baselib = 1       " Highlight base lib methods - not sure what methods this makes a difference on
-let php_htmlInStrings = 1 " Highlight HTML in strings... though it doesn't seem to work
-let php_sql_query = 1     " Highlight SQL in strings (not as intuitively-named as some other vars)
+"let php_htmlInStrings = 1 " Highlight HTML in strings... though it doesn't seem to work
+"let php_sql_query = 1     " Highlight SQL in strings, which it turns out is annoying
 let php_folding = 1       " Enable syntax-level folding for PHP
 " }}}
 
@@ -112,6 +120,7 @@ let php_folding = 1       " Enable syntax-level folding for PHP
 " TagBar
 let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Use our painstakingly-downloaded and compiled version of Exuberant Ctags
 "let g:tagbar_width=26 " Adjust the tagbar panel's width if necessary
+
 " Ultisnips
 " switch triggers to maintain compatibility with SuperTab & YCM
 " (taken from the WordPress.vim sample .vimrc)
