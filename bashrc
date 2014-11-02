@@ -10,4 +10,5 @@
 echo "Loading ${HOME}/.bashrc"
 #
 # Define aliases, etc. in here, and we'll pull them into ~/.bash_profile as well
+alias lsa='ls -lhaG'
 #-end

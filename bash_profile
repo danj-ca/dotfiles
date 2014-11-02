@@ -16,6 +16,10 @@ source ~/.bashrc # Define aliases in here (i.e. for non-login shells) and pull t
 
 # Stick local bin before usr/bin to guarantee binaries I install override system-installed (recommendation from Homebrew)
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin'
+
+# Set up rbenv hooks
+eval "$(rbenv init -)"
+
 # Put a Cthulhu in your shell, per [this](http://notes.torrez.org/2013/04/put-a-burger-in-your-shell.html)
 # The bits between \[ and \] modify the title bar, per [this](http://www.ibm.com/developerworks/linux/library/l-tip-prompt/)
 export PS1="\[\e]2;\u@\h:\w\a\]\W 🐙  "
