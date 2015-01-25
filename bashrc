@@ -11,4 +11,7 @@ echo "Loading ${HOME}/.bashrc"
 #
 # Define aliases, etc. in here, and we'll pull them into ~/.bash_profile as well
 alias lsa='ls -lhaG'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+# Source kvm so we can run it from anywhere
+source kvm.sh
 #-end
