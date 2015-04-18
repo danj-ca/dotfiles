@@ -14,4 +14,5 @@ alias lsa='ls -lhaG'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # Source kvm so we can run it from anywhere
 source kvm.sh
+source dnvm.sh
 #-end
