@@ -15,4 +15,16 @@ alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # Source kvm so we can run it from anywhere
 source kvm.sh
 source dnvm.sh
+
+# Create an alias for running Visual Studio Code from the CLI
+# Per instructions [here](https://code.visualstudio.com/Docs/setup)
+code () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
 #-end

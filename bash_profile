@@ -22,6 +22,7 @@ eval "$(rbenv init -)"
 
 # Add the default KRE executables to PATH
 kvm use default
+dnvm use default
 
 # Put a Cthulhu in your shell, per [this](http://notes.torrez.org/2013/04/put-a-burger-in-your-shell.html)
 # The bits between \[ and \] modify the title bar, per [this](http://www.ibm.com/developerworks/linux/library/l-tip-prompt/)
